@@ -1,0 +1,16 @@
+my_first:
+  jdbc:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=one
+    user: one
+    pass: one
+  hibernate:
+    dialect: org.hibernate.dialect.PostgreSQL9Dialect
+my_second:
+  jdbc:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=two
+    user: two
+    pass: two
+  hibernate:
+    dialect: org.hibernate.dialect.PostgreSQL9Dialect
