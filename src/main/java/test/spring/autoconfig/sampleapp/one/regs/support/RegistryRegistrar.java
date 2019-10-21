@@ -9,8 +9,6 @@ import org.springframework.core.ResolvableType;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
 
-import java.util.List;
-
 @Slf4j
 public class RegistryRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
@@ -34,10 +32,11 @@ public class RegistryRegistrar implements ImportBeanDefinitionRegistrar {
         String registryServiceBean = entityClass.getSimpleName() + "Registry";
         registry.registerBeanDefinition(registryServiceBean, regSrvDefinition);
 
-//        RootBeanDefinition accessCtrlDef = new RootBeanDefinition(WebRouterFactoryBean.class);
-//        accessCtrlDef.getPropertyValues().addPropertyValue("modelClass", modelClass);
-//        accessCtrlDef.getPropertyValues().addPropertyValue("accessServiceBeanName", registryServiceBean);
-//        registry.registerBeanDefinition(entityClass.getSimpleName() + "Controller", accessCtrlDef);
+        RootBeanDefinition accessCtrlDef = new RootBeanDefinition(WebRouterFactoryBean.class);
+        accessCtrlDef.getPropertyValues().addPropertyValue("modelClass", modelClass);
+        accessCtrlDef.getPropertyValues().addPropertyValue("accessServiceBeanName", registryServiceBean);
+        accessCtrlDef.getPropertyValues().addPropertyValue("path", attributes.getString("path"));
+        registry.registerBeanDefinition(entityClass.getSimpleName() + "Controller", accessCtrlDef);
 
     }
 }

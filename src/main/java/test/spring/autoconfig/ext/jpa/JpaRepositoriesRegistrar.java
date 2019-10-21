@@ -32,6 +32,7 @@ public class JpaRepositoriesRegistrar implements ImportBeanDefinitionRegistrar, 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
 
+        log.warn("JpaRepositoriesRegistrar");
         log.warn("Anno class " + metadata.getClass().getName());
 
         Map<String, Object> annotationAttributes = metadata.getAnnotationAttributes(JpaSettings.class.getName());

@@ -2,21 +2,18 @@ package test.spring.autoconfig.sampleapp.one;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "reg1")
+@Table(name = "reg2")
 @Data
-public class Reg1Entity {
-
+public class Reg2Entity {
 
     @Id
-    private Long id;
+    Long id;
+    String code;
+    String title;
 
-    private String name;
-
-    private String descr;
 }

@@ -22,6 +22,7 @@ public class EmSettingsRegistrar implements BeanFactoryAware, ImportBeanDefiniti
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
 
+        log.warn("EM Settings Registrar run");
         AnnotationAttributes attributes = new AnnotationAttributes(metadata.getAnnotationAttributes(JpaSettings.class.getName()));
         String componentsPrefix = attributes.getString("componentsPrefix");
         String propertiesPrefix = attributes.getString("propertiesPrefix");
